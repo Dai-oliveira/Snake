@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Cobrinha 🐍</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🐍 Jogo da Cobrinha</h1>
+            <p class="subtitle">Quanto você consegue comer?</p>
+        </header>
+
+        <!-- Game Info -->
+        <div class="game-info">
+            <div class="info-box">
+                <span class="label">Pontuação</span>
+                <span class="value" id="score">0</span>
+            </div>
+            <div class="info-box">
+                <span class="label">Melhor Pontuação</span>
+                <span class="value" id="highScore">0</span>
+            </div>
+            <div class="info-box">
+                <span class="label">Nível</span>
+                <span class="value" id="level">1</span>
+            </div>
+        </div>
+
+        <!-- Game Canvas -->
+        <div class="game-container">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="startBtn" class="btn btn-primary">▶ Iniciar Jogo</button>
+            <button id="pauseBtn" class="btn btn-secondary" disabled>⏸ Pausar</button>
+            <button id="resetBtn" class="btn btn-danger">🔄 Resetar</button>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h3>Como Jogar</h3>
+            <ul>
+                <li><strong>Setas do Teclado</strong> ou <strong>WASD</strong> para mover a cobrinha</li>
+                <li>Coma a 🍎 para crescer e ganhar pontos</li>
+                <li>Não bata nas paredes ou em si mesmo!</li>
+                <li>A cada 5 pontos, o jogo fica mais rápido 🚀</li>
+            </ul>
+        </div>
+
+        <!-- Mobile Touch Controls -->
+        <div class="touch-controls">
+            <button class="touch-btn up" id="upBtn">▲</button>
+            <div class="touch-row">
+                <button class="touch-btn left" id="leftBtn">◄</button>
+                <button class="touch-btn down" id="downBtn">▼</button>
+                <button class="touch-btn right" id="rightBtn">►</button>
+            </div>
+        </div>
+
+        <!-- Game Over Modal -->
+        <div class="modal" id="gameOverModal">
+            <div class="modal-content">
+                <h2>Game Over!</h2>
+                <p>Sua Pontuação: <span id="finalScore">0</span></p>
+                <p id="newRecord" class="new-record" style="display: none;">🎉 Novo Recorde!</p>
+                <button class="btn btn-primary" onclick="location.reload()">Jogar Novamente</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
